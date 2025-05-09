@@ -5,7 +5,17 @@ const fs= require('fs');
 const htmlContent= fs.readFileSync('./template/index.html','utf-8');
 
 const server= http.createServer((req,res)=>{
-    res.end(htmlContent)
+    const path= req?.url;
+    if(path=='/' || path.toLocaleLowerCase()==='/home'){
+      res.end(htmlContent);
+    }else if(path.toLocaleLowerCase()==='/about'){
+        res.end("You are in about section")
+    }else if(path.toLocaleLowerCase()==='/contact'){
+        res.end("You are in contact section");
+    }else{
+        res.end("<h1>404: Page Not found!</h1>")
+    }
+  
     console.log("server has started")
 })
 
