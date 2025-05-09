@@ -1,8 +1,11 @@
 const http= require('http');
+const fs= require('fs');
 
+
+const htmlContent= fs.readFileSync('./template/index.html','utf-8');
 
 const server= http.createServer((req,res)=>{
-    res.end("Hello server")
+    res.end(htmlContent)
     console.log("server has started")
 })
 
