@@ -1,13 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>This is basic NodeJs Application</h1>
-    <p>NodeJS provide a runtime for javaScript to run on server side. </p>
-    <p>It run's on chrome's V8 engine.</p>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple Routing Page</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+
+      header {
+        background-color: #333;
+        color: white;
+        padding: 15px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      nav a {
+        color: white;
+        margin-left: 15px;
+        text-decoration: none;
+      }
+
+      nav a:hover {
+        text-decoration: underline;
+      }
+
+      .content {
+        padding: 20px;
+      }
+
+      section {
+        display: none;
+      }
+
+      section.active {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div><strong>My Website</strong></div>
+      <nav>
+        <a href="/home">Home</a>
+        <a href="/about">About</a>
+        <a href="/product">Product</a>
+        <a href="/contact">Contact</a>
+      </nav>
+    </header>
+
+    <div class="content">
+      <h3>{{%CONTENT%}}</h3>
+    </div>
+  </body>
 </html>
